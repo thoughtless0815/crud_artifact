@@ -43,10 +43,12 @@
     <script src="validate.js"></script>
 </head>
 <body>
-<form id="first_form" action="#"   th:object="${user}" method="post">
+<form id="registration_form" onsubmit="return f()" action="#" th:action="@{/add}"  th:object="${user}" method="post">
     <p>Username: <input id="name" type="text" th:field="*{name}"/></p>
-    <p>Password: <input id="password" type="password" th:field="*{password}"/></p>
+    <span class="error_form" id="username_error_message"></span>
 
+    <p>Password: <input id="password" type="password" th:field="*{password}"/></p>
+    <span class="error_form" id="password_error_message"></span>
 
     <input type="submit" name="submit" id="submit">
 </form>

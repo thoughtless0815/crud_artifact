@@ -21,6 +21,7 @@ public class MainController {
         User n = new User();
         n.setName(name);
         n.setPassword(password);
+        n.setType("user");
         userRepository.saveAndFlush(n);
         return "Saved";
     }

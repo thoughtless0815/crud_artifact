@@ -46,11 +46,9 @@
 <form id="registration_form" onsubmit="return f()" action="#" th:action="@{/add}"  th:object="${user}" method="post">
     <p>Username: <input id="name" type="text" th:field="*{name}"/></p>
     <span class="error_form" id="username_error_message"></span>
-
     <p>Password: <input id="password" type="password" th:field="*{password}"/></p>
     <span class="error_form" id="password_error_message"></span>
-
-    <input type="submit" name="submit" id="submit">
+    <input type="submit" value="Submit" id="submit">
 </form>
 </body>
 </html>

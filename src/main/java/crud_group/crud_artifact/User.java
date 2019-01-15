@@ -6,16 +6,28 @@ import javax.persistence.*;
 public class User {
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    @Column(name = "a_id", nullable = false)
+    @Column(name = "id", nullable = false)
     private Integer id = 1;
 
     @Basic
-    @Column(name = "a_name", nullable = false)
+    @Column(name = "name", nullable = false, unique = true)
     public String name;
 
     @Basic
-    @Column(name = "a_password", nullable = false)
+    @Column(name = "password", nullable = false)
     public String password;
+
+    @Basic
+    @Column(name = "type", nullable = false)
+    public String type;
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
 
     public Integer getId() {
         return id;
